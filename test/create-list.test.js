@@ -39,9 +39,9 @@ function createLi(pokemon) {
 
     const html = `
     <li>
-                <h2>${pokemon.pokemon.charAt(0).toUpperCase() + pokemon.pokemon.slice(1)}</h2>
-                <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png">
-                <p>HP:45 A:49 D:49</p>
+                <h2>${capitalize(pokemon.pokemon)}</h2>
+                <img src="${pokemon.url_image}">
+                <p>HP:${pokemon.hp} A:${pokemon.attack} D:${pokemon.defense}</p>
             </li>`;
 
     template.innerHTML = html;
