@@ -4,7 +4,7 @@ export function createLi(pokemon) {
     const template = document.createElement('template');
 
     const html = `
-    <li>
+    <li style="background-color: ${pokemon.color_1}">
                 <h2>${capitalize(pokemon.pokemon)}</h2>
                 <img src="${pokemon.url_image}">
                 <p>HP:${pokemon.hp} A:${pokemon.attack} D:${pokemon.defense}</p>
