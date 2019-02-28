@@ -1,4 +1,5 @@
-import capitalize from '../src/capitalize.js';
+import { createLi } from '../src/list-component.js';
+
 const test = QUnit.test;
 
 const pokemon = {
@@ -33,22 +34,6 @@ const pokemon = {
     'pokebase': 'bulbasaur',
     'pokedex': 'http://www.pokemon.com/us/pokedex/bulbasaur'
 };
-
-function createLi(pokemon) {
-    const template = document.createElement('template');
-
-    const html = `
-    <li>
-                <h2>${capitalize(pokemon.pokemon)}</h2>
-                <img src="${pokemon.url_image}">
-                <p>HP:${pokemon.hp} A:${pokemon.attack} D:${pokemon.defense}</p>
-            </li>`;
-
-    template.innerHTML = html;
-
-    return template.content;
-}
-
 
 test('make hmtl li template using interpolation', assert => {
 
