@@ -1,0 +1,19 @@
+#pokelist {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#pokelist li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid red;
+    list-style: none;
+    width: 200px;
+    height: 200px;
+    margin: 4px;
+}
+
+#pokelist img {
+    width: 30%;
+}
