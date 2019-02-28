@@ -38,7 +38,7 @@ const pokemon = {
 test('make hmtl li template using interpolation', assert => {
 
     const expected = `
-    <li>
+    <li style="background-color: #78C850">
                 <h2>Bulbasaur</h2>
                 <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png">
                 <p>HP:45 A:49 D:49</p>
