@@ -12,36 +12,27 @@ currentPage.textContent = currentPageNumber;
 export default function loadPaging(totalCount) {
     const totalPageCount = Math.ceil(totalCount / PER_PAGE);
     totalPages.textContent = totalPageCount;
-
-    nextButton.addEventListener('click', () => {
-        //add 1 to current page
-        currentPageNumber++;
     
-        //set current page text content
+    function updatePaging() {
         currentPage.textContent = currentPageNumber;
-        //make paging options object
         const pagingOptions = {
             page: currentPageNumber,
             perPage: PER_PAGE
         };
         console.log(pagingOptions);
-        //if current page is total page disable next button
         nextButton.disabled = currentPageNumber === totalPageCount;
-        //if current page = 1 disable prev. button
         previousButton.disabled = currentPageNumber === 1;
+    } 
+    updatePaging();
+
+    nextButton.addEventListener('click', () => {
+        currentPageNumber++;
+        updatePaging();
     });
 
     previousButton.addEventListener('click', () => {
         currentPageNumber--;
-        currentPage.textContent = currentPageNumber;
-        const pagingOptions = {
-            page: currentPageNumber,
-            perPage: PER_PAGE
-        };
-        console.log(pagingOptions);
-        nextButton.disabled = currentPageNumber === totalPageCount;
-        //if current page = 1 disable prev. button
-        previousButton.disabled = currentPageNumber === 1;
+        updatePaging();
     });
 }
 
