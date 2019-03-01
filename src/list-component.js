@@ -16,6 +16,9 @@ export function createLi(pokemon) {
 }
 const pokelist = document.getElementById('pokelist');
 export default function loadList(pokemonList) {
+    while(pokelist.children.length > 0) {
+        pokelist.lastElementChild.remove();
+    }
     pokemonList.forEach(pokemon => {
         const pokeDom = createLi(pokemon);
         pokelist.appendChild(pokeDom);
